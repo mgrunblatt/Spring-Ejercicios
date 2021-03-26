@@ -16,7 +16,7 @@ public class UserController {
     private final AtomicLong id= new AtomicLong();
 
     @GetMapping("/convertir")
-    public RomanService numeroRomano(@RequestParam(value = "numero",defaultValue = "numero")int numero){
+    public RomanService numeroRomano(@RequestParam(value = "numero",defaultValue = "uno")int numero){
 
         RomanService romanService = new RomanService(numero,RomanService.convertirANumerosRomanos(numero));
 

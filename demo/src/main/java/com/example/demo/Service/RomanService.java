@@ -2,19 +2,18 @@ package com.example.demo.Service;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class RomanService {
 
     private int numeroInicial;
     private String numeroRomano;
 
-    public RomanService(){
-
-    }
 
     //método para pasar a números romanos
     public static String convertirANumerosRomanos(int numero) {

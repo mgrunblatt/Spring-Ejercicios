@@ -1,6 +1,7 @@
 package com.example.SpringCalorias.controllers;
 
 import com.example.SpringCalorias.dtos.PlatoDTO;
+import com.example.SpringCalorias.exception.IngredientNotFound;
 import com.example.SpringCalorias.repositories.IngredienteDTORepositoryImpl;
 import com.example.SpringCalorias.services.Service;
 import com.example.SpringCalorias.services.ServiceImpl;
@@ -21,16 +22,16 @@ public class PlatoController {
 
     @PostMapping("/calorias")
     public ResponseEntity buscarCalorias(@RequestBody PlatoDTO platoDTO){
-        return new ResponseEntity(service.caloriasTotales(platoDTO), HttpStatus.OK);
+        return service.caloriasTotales(platoDTO);
     }
 
     @PostMapping("/calorias/ingrediente")
     public ResponseEntity caloriasPorIngrediente(@RequestBody PlatoDTO platoDTO){
-        return new ResponseEntity(service.caloriasPorIngrediente(platoDTO), HttpStatus.OK);
+        return service.caloriasPorIngrediente(platoDTO);
     }
 
     @PostMapping("/calorias/mayor")
     public ResponseEntity ingredienteMasCalorico(@RequestBody PlatoDTO platoDTO){
-        return new ResponseEntity(service.ingredienteMasCalorico(platoDTO), HttpStatus.OK);
+        return service.ingredienteMasCalorico(platoDTO);
     }
 }

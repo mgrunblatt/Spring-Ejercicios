@@ -38,5 +38,15 @@ public class UserController {
         return new RedirectView(service.buscarUrl(id));
     }
 
+    @GetMapping("/metrica")
+    public ResponseEntity obtenerEstadisticas(@RequestParam(value = "id", defaultValue = "1" ) Long id) throws InvalidUrlException {
+        return new ResponseEntity(service.obtenerStats(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/invalidate")
+    public ResponseEntity eliminarEndPoint(@RequestParam(value = "id", defaultValue = "1" ) Long id) throws InvalidUrlException {
+        return new ResponseEntity(service.eliminarLinkDTO(id), HttpStatus.OK);
+    }
+
 
 }

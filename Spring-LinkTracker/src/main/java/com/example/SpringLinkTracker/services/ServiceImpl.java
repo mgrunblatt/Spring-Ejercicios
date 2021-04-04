@@ -24,13 +24,13 @@ public class ServiceImpl implements Service{
     private AtomicLong contador = new AtomicLong();
 
     @Override
-    public LinkDTO crearLinkDTO(String url) throws InvalidUrlException {
-        if(validateUrl(url)){
-            LinkDTO linkDTO=new LinkDTO(contador.incrementAndGet(),url,0);
+    public LinkDTO crearLinkDTO(LinkDTO link) throws InvalidUrlException {
+        if(validateUrl(link.getUrl())){
+            LinkDTO linkDTO=new LinkDTO(contador.incrementAndGet(),link.getUrl(),0);
             linkDTORepository.insertarUrl(linkDTO);
             return linkDTO;
         }else{
-            throw new InvalidUrlException(url);
+            throw new InvalidUrlException(link.getUrl());
         }
     }
 

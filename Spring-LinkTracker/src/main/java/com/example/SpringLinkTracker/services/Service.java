@@ -10,7 +10,7 @@ import java.util.UUID;
 public interface Service {
 
 
-    public LinkDTO crearLinkDTO (String url) throws InvalidUrlException;
+    public LinkDTO crearLinkDTO (LinkDTO lind) throws InvalidUrlException;
     public String buscarUrl (Long id) throws UrlNotFoundException;
     public StatsDTO obtenerStats(Long id);
     public LinkDTO eliminarLinkDTO(Long id);

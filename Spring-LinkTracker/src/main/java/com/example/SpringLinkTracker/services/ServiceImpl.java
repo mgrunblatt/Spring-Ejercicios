@@ -5,12 +5,8 @@ import com.example.SpringLinkTracker.dtos.StatsDTO;
 import com.example.SpringLinkTracker.exceptions.InvalidUrlException;
 import com.example.SpringLinkTracker.exceptions.UrlNotFoundException;
 import com.example.SpringLinkTracker.repositories.LinkDTORepositoryImpl;
-import org.apache.commons.validator.UrlValidator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -40,12 +36,12 @@ public class ServiceImpl implements Service{
     }
 
     @Override
-    public StatsDTO obtenerStats(Long id) {
+    public StatsDTO obtenerStats(Long id) throws InvalidUrlException {
         return linkDTORepository.getStats(id);
     }
 
     @Override
-    public LinkDTO eliminarLinkDTO(Long id) {
+    public LinkDTO eliminarLinkDTO(Long id) throws InvalidUrlException {
         return linkDTORepository.deleteLinkById(id);
     }
 

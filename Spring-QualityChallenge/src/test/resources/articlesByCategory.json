@@ -1,0 +1,21 @@
+[{
+  "productId": 1,
+  "name": "Desmalezadora",
+  "category": "Herramientas",
+  "brand": "Makita",
+  "price": 9600.0,
+  "quantity": 10,
+  "freeShipping": "true",
+  "prestige": "****"
+},
+  {
+    "productId": 2,
+    "name": "Taladro",
+    "category": "Herramientas",
+    "brand": "Black & Decker",
+    "price": 12500.0,
+    "quantity": 7,
+    "freeShipping": "true",
+    "prestige": "****"
+  }
+]
